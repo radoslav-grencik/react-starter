@@ -2,16 +2,32 @@ import React, { useContext } from 'react';
 
 import { UserContext } from '@/js/contexts/user-context/UserContext';
 
-import Show from '../show/Show';
+import Show from '../control-flow/Show';
 
-export const AuthShow: React.FC<React.PropsWithChildren> = ({ children }) => {
+export const AuthShow: React.FC<
+  React.PropsWithChildren<{
+    fallback?: React.ReactNode;
+  }>
+> = ({ children, ...rest }) => {
   const { isAuthorized } = useContext(UserContext);
 
-  return <Show when={isAuthorized}>{children}</Show>;
+  return (
+    <Show when={isAuthorized} {...rest}>
+      {children}
+    </Show>
+  );
 };
 
-export const UnAuthShow: React.FC<React.PropsWithChildren> = ({ children }) => {
+export const UnAuthShow: React.FC<
+  React.PropsWithChildren<{
+    fallback?: React.ReactNode;
+  }>
+> = ({ children, ...rest }) => {
   const { isAuthorized } = useContext(UserContext);
 
-  return <Show when={!isAuthorized}>{children}</Show>;
+  return (
+    <Show when={!isAuthorized} {...rest}>
+      {children}
+    </Show>
+  );
 };

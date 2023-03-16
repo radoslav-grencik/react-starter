@@ -1,10 +1,11 @@
 const Show: React.FC<
   React.PropsWithChildren<{
     when: boolean;
+    fallback?: React.ReactNode;
   }>
-> = ({ children, when }) => {
+> = ({ children, when, fallback }) => {
   if (!when) {
-    return null;
+    return <>{fallback}</>;
   }
 
   return <>{children}</>;
