@@ -15,11 +15,13 @@ const DefaultPage: React.FC = () => {
       <div>
         <SideNav />
       </div>
-      <main>DefaultPage</main>
-      <button type="button" onClick={toggleLogin}>
-        {isAuthorized ? 'Logout' : 'Login'}
-      </button>
-      <footer></footer>
+      <main>
+        DefaultPage
+        <button type="button" onClick={toggleLogin}>
+          {isAuthorized ? 'Logout' : 'Login'}
+        </button>
+      </main>
+      <footer />
     </div>
   );
 };

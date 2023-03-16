@@ -17,7 +17,7 @@ const LoginPage: React.FC = () => {
           {isAuthorized ? 'Logout' : 'Login'}
         </button>
       </main>
-      <footer></footer>
+      <footer />
     </div>
   );
 };

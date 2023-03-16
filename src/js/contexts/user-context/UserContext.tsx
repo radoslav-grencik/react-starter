@@ -1,5 +1,6 @@
-import { createContext, useCallback, useMemo, useState } from 'react';
+import { createContext, useCallback, useMemo } from 'react';
 import noop from 'lodash/noop';
+import useLocalStorage from 'use-local-storage';
 import { useLocation } from 'wouter';
 
 import { RoutePath } from '@/js/Routes';
@@ -21,17 +22,20 @@ export const UserProvider: React.FC<React.PropsWithChildren> = ({
 
   // TODO - implement authorization
 
-  const [isAuthorized, setIsAuthorized] = useState(false);
+  const [isAuthorized, setIsAuthorized] = useLocalStorage(
+    'isAuthorized',
+    false
+  );
 
   const login = useCallback(() => {
     setIsAuthorized(true);
     setLocation(RoutePath.HOME);
-  }, [setLocation]);
+  }, [setIsAuthorized, setLocation]);
 
   const logout = useCallback(() => {
     setIsAuthorized(false);
     setLocation(RoutePath.LOGIN);
-  }, [setLocation]);
+  }, [setIsAuthorized, setLocation]);
 
   const toggleLogin = useMemo(() => {
     return isAuthorized ? logout : login;

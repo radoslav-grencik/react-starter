@@ -11,8 +11,7 @@ export const useElementEventListener = <
   element: T | null | React.MutableRefObject<T | null>,
   type: K,
   listener: (this: T, ev: HTMLElementEventMap[K]) => void,
-  options?: boolean | AddEventListenerOptions,
-  deps?: React.DependencyList
+  options?: boolean | AddEventListenerOptions
 ) => {
   const savedElement = useSaved(isHTMLElement(element) ? element : null);
   const savedListener = useSaved(listener);
@@ -38,6 +37,5 @@ export const useElementEventListener = <
     return () => {
       eventTarget.removeEventListener(...params);
     };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [finalElement, savedListener, savedOptions, type, ...(deps ?? [])]);
+  }, [finalElement, savedListener, savedOptions, type]);
 };
