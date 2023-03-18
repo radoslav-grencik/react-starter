@@ -1,5 +1,5 @@
 import react from '@vitejs/plugin-react-swc';
-import { fileURLToPath, URL } from 'url';
+import { fileURLToPath } from 'url';
 import { defineConfig } from 'vite';
 
 const resolvePath = (path: string) => {
