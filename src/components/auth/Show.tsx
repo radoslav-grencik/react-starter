@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 
-import { UserContext } from '@/js/contexts/user-context/UserContext';
+import { UserContext } from '@/contexts/user-context/UserContext';
 
 import Show from '../control-flow/Show';
 

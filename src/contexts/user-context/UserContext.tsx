@@ -3,7 +3,7 @@ import noop from 'lodash/noop';
 import useLocalStorage from 'use-local-storage';
 import { useLocation } from 'wouter';
 
-import { RoutePath } from '@/js/Routes';
+import { RoutePath } from '@/Routes';
 
 import { AuthContextType } from './types';
 

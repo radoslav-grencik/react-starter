@@ -7,11 +7,8 @@ const resolvePath = (path: string) => {
 };
 
 export default defineConfig({
-  root: resolvePath('./src'),
-  publicDir: resolvePath('./src/public'),
   build: {
     outDir: resolvePath('./dist'),
-    emptyOutDir: true,
   },
   resolve: {
     alias: [

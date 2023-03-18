@@ -1,6 +1,6 @@
 import { Link } from 'wouter';
 
-import { RoutePath } from '@/js/Routes';
+import { RoutePath } from '@/Routes';
 
 import { AuthShow, UnAuthShow } from '../auth/Show';
 

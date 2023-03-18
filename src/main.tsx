@@ -1,8 +1,8 @@
 import ReactDOM from 'react-dom/client';
 
-import App from '@/js/App';
-
 import 'modern-css-reset';
+
+import App from './App';
 
 const root = document.getElementById('root');
 

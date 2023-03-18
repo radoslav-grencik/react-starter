@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 
-import SideNav from '@/js/components/side-nav/SideNav';
-import TopNav from '@/js/components/top-nav/TopNav';
-import { UserContext } from '@/js/contexts/user-context/UserContext';
+import SideNav from '@/components/side-nav/SideNav';
+import TopNav from '@/components/top-nav/TopNav';
+import { UserContext } from '@/contexts/user-context/UserContext';
 
 const DefaultPage: React.FC = () => {
   const { isAuthorized, toggleLogin } = useContext(UserContext);

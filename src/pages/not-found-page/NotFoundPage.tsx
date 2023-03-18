@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLocation } from 'wouter';
 
-import { RoutePath } from '@/js/Routes';
+import { RoutePath } from '@/Routes';
 
 const NotFoundPage: React.FC = () => {
   const [, setLocation] = useLocation();

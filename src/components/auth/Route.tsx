@@ -1,8 +1,8 @@
 import { useContext, useMemo } from 'react';
 import { Redirect, Route, useRoute } from 'wouter';
 
-import { UserContext } from '@/js/contexts/user-context/UserContext';
-import { RoutePath } from '@/js/Routes';
+import { UserContext } from '@/contexts/user-context/UserContext';
+import { RoutePath } from '@/Routes';
 
 export const AuthRoute: typeof Route = (props) => {
   const { isAuthorized } = useContext(UserContext);
